@@ -1,12 +1,11 @@
 import { NextFunction, Request , Response } from "express";
-
-
 export default (dependencies:any)=>{
     const login =  async(req: Request,res: Response,next: NextFunction)=>{
         try{
             const {useCases:{loginUser_usecase}} = dependencies
             const {number,password} = req.body;
             const response = await loginUser_usecase(dependencies).execute(number,password);
+            req.session.refreshToken = response.refreshToken;
             if(response.message){
                 res.json(response)
             }else{

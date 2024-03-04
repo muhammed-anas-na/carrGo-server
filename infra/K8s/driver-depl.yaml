@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: driver-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: driver #Find the pods with the label app: driver 
+  template:
+    metadata:
+      labels:
+        app: driver
+    spec:
+      containers:
+        - name: driver
+          image: anasna/driver-service:latest
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: driver-service
+spec:
+  selector:
+    app: driver
+  ports:
+    - name : driver
+      protocol: TCP
+      port: 8001
+      targetPort: 8001

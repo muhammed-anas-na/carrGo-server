@@ -18,10 +18,13 @@ const tripSchema = new mongoose.Schema({
     payment_method: String,    
     ETA: String,
     review: String,
+    cancelReason: String,
+    selectedOption: String,
     createdAt:{
         type: String,
         default: new Date()
-    }
+    },
+    rating:String,
 });
 
 const trip = mongoose.model('Trip', tripSchema);

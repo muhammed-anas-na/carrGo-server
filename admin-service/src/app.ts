@@ -21,8 +21,8 @@ app.use(
     })
 )
 
-consumerConfig(dependencies)
-app.use('/' , routes(dependencies))
+// consumerConfig(dependencies)
+app.use('/admin' , routes(dependencies))
 app.use(errorMiddleware)
 
 export {app}

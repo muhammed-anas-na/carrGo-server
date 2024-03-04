@@ -6,16 +6,10 @@ import dependencies from './config/dependencies'
 import { routes } from "./routes";
 import errorMiddleware from './libs/middleware/errormiddleware'
 import session from 'express-session';
-
-
-// type CustomeSessionData = {
-//     otp: string,
-//   };
-  
-  // Augment express-session with a custom SessionData object
   declare module "express-session" {
     interface SessionData {
       otp: string;
+      refreshToken: string,
     }
   }
 
@@ -40,12 +34,12 @@ app.use(bodyParser.json())
 
 app.use(
     cors({
-      origin: 'http://localhost:5173',
+      origin: 'http://localhost:8080',
       credentials: true,
     })
 )
 
-app.use('/' , routes(dependencies))
+app.use('/user' , routes(dependencies))
 app.use(errorMiddleware)
 
 export {app}

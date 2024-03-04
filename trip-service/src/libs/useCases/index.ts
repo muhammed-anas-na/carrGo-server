@@ -9,6 +9,11 @@ import {finishTrip_usecase} from './trip/finishTrip_usecase';
 import { getAllTripsOfUser_usecase } from './trip/getAllTripsOfUser_usecase';
 import { getCurrentLocation_usecase } from './trip/getCurrentLocation_usecase';
 import { getOnlineDrivers_usecase } from './trip/getOnlineDrivers_usecase';
+import { getAllTrips_usecase } from './trip/getAllTrips_usecase';
+import { getTripDetailsById_usecase } from './trip/getTripDetailsById_usecase';
+import { getTripDetailsByDriverId_usecase } from './trip/getTripDetailsByDriverId_usecase';
+import { getTripDetailsByUserId_usecase } from './trip/getTripDetailsByUserId_usecase';
+import { completeCancelTrip_usecase } from './trip/completeCancelTrip_usecase';
 
 export {
     findcab_usecase,
@@ -22,4 +27,9 @@ export {
     getAllTripsOfUser_usecase,
     getCurrentLocation_usecase,
     getOnlineDrivers_usecase,
+    getAllTrips_usecase,
+    getTripDetailsById_usecase,
+    getTripDetailsByDriverId_usecase,
+    getTripDetailsByUserId_usecase,
+    completeCancelTrip_usecase,
 }

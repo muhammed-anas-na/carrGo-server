@@ -6,6 +6,7 @@ import sendSms_controller from "./sendSms_controller";
 import searchLocationController from "./searchLocationController";
 import getUserDetails_controller from "./getUserDetails_controller";
 import getAllUsers_controller from "./getAllUsers_controller";
+import refreshToken_controller from "./refreshToken_controller";
 
 export default (dependencies:any)=>{
     return {
@@ -17,5 +18,6 @@ export default (dependencies:any)=>{
         sendSms_controller:sendSms_controller(dependencies),
         getUserDetails_controller:getUserDetails_controller(dependencies),
         getAllUsers_controller:getAllUsers_controller(dependencies),
+        refreshToken_controller:refreshToken_controller(dependencies),
     }
 }

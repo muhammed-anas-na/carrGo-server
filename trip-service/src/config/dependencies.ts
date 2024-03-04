@@ -12,11 +12,12 @@ import {
     getAllTripsOfUser_usecase,
     getCurrentLocation_usecase,
     getOnlineDrivers_usecase,
-    
+    getAllTrips_usecase,
+    getTripDetailsById_usecase,
+    getTripDetailsByDriverId_usecase,
+    getTripDetailsByUserId_usecase,
+    completeCancelTrip_usecase,
 } from "../libs/useCases";
-
-
-
 
 const useCases:any = {
     findcab_usecase,
@@ -30,6 +31,11 @@ const useCases:any = {
     getAllTripsOfUser_usecase,
     getCurrentLocation_usecase,
     getOnlineDrivers_usecase,
+    getAllTrips_usecase,
+    getTripDetailsById_usecase,
+    getTripDetailsByDriverId_usecase,
+    getTripDetailsByUserId_usecase,
+    completeCancelTrip_usecase,
 }
 
 const repository:any = {

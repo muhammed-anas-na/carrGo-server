@@ -7,17 +7,17 @@ dotenv.config()
         console.log("AUTH MIDDLEWARE")
         if(!req.headers.authorization){
             console.log("NO HEADER")
-            throw new Error("Not Authorized")
+            res.status(401).json('Authorization header required');
         }else{
             try{
-                console.log("TRYYY")
-                console.log(req.headers.authorization)
-                const decode = jwt.verify(req.headers.authorization, process.env.ACCESS_JWT_SECRET_KEY!)
-                console.log('Decode =>', decode);
+                const token = req.headers.authorization.split(' ')[1];
+                console.log("TOKEN IN MIDDLEWARE ==>",token);
+                const decode = jwt.verify(token, process.env.ACCESS_JWT_SECRET_KEY!)
+                console.log("Token verified")
                 next();
             }catch(err){
-                console.log(err);
-                throw new Error("Token verification Error");
+                console.log("Catch in authMiddleware ==>",err);
+                res.status(401).json('Invalid access token');
             }
         }
         

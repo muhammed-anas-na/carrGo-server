@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(
     cors({
-      origin: 'http://localhost:5173',
+      origin: 'http://localhost:8080',
       credentials: true,
 
     })
@@ -26,7 +26,7 @@ app.use(
 
 
 
-app.use('/' , routes(dependencies))
+app.use('/trip' , routes(dependencies))
 app.use(errorMiddleware)
 
 export {app}

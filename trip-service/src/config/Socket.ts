@@ -7,6 +7,7 @@ export default function SocketIo(server: any , dependencies: any){
     matchDriver_controller,
     calculateTripDetails_controller,
     updateLiveStatus_controller,
+
   } = adminController(dependencies)
     const io = new Server(server, {
         cors: {origin:"http://localhost:5173", methods: ["GET", "POST"]},
@@ -45,7 +46,7 @@ export default function SocketIo(server: any , dependencies: any){
         socket.on('successRide' ,async (data)=>{
           console.log("Data from driver ==> ",data)
           if(data.message == 'reject'){
-            socket.broadcast.to(data.request[0].Id).emit('ride-rejec')
+            socket.broadcast.to(data.request[0].Id).emit('ride-reject')
             return;
           }
           const response  = await calculateTripDetails_controller(data)
@@ -103,6 +104,11 @@ export default function SocketIo(server: any , dependencies: any){
         socket.on('send-message' , (data)=>{
           console.log("Messageee ==>" , data)
           socket.broadcast.to(data.driverSocketId).emit('recieve-message' , data);
+        })
+
+        socket.on('cancel-trip-by-user' , (data)=>{
+          console.log("Trip canclled by user" , data)
+          socket.broadcast.to(data.driverSocketId).emit('cancel-trip-by-user' , data);
         })
 
         // Handle disconnection

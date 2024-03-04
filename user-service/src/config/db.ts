@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import {user} from '../app/database/models/userModel'
+
 dotenv.config()
 
 export const dbConenct = async()=>{
@@ -7,6 +9,6 @@ export const dbConenct = async()=>{
         await mongoose.connect(process.env.MONGO_URL!)
         console.log("User service connected to DB");
     }catch(err){
-        console.log("Error connection")
+        console.log("Error connection" , err)
     }
 }

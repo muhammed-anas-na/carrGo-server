@@ -6,6 +6,7 @@ import { checkotp_usecase } from "./user/checkotp_usecase";
 import { getDriverDetails_usecase } from "./user/getDriverDetails_usecase";
 import { getAllDrivers_usecase } from "./user/getAllDrivers_usecase";
 import { adminAcceptedDriverRequest_usecase } from "./user/adminAcceptedDriverRequest_usecase";
+import { blockDriverById_usecase } from "./user/blockDriverById_usecase";
 
 export {
     loginDriver_usecase,
@@ -16,4 +17,5 @@ export {
     getDriverDetails_usecase,
     getAllDrivers_usecase,
     adminAcceptedDriverRequest_usecase,
+    blockDriverById_usecase,
 }

@@ -7,6 +7,7 @@ import {
     getDriverDetails_usecase,
     getAllDrivers_usecase,
     adminAcceptedDriverRequest_usecase,
+    blockDriverById_usecase,
 } from "../libs/useCases";
 import driverRepository from "../app/repository/driver.repository";
 
@@ -19,6 +20,7 @@ const useCases:any = {
     getDriverDetails_usecase,
     getAllDrivers_usecase,
     adminAcceptedDriverRequest_usecase,
+    blockDriverById_usecase,
 }
 
 const repository:any = {

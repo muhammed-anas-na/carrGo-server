@@ -11,6 +11,7 @@ export default (dependencies:any)=>{
         sendSms_controller ,
         getDriverDetails_controller,
         getAllDrivers_controller,
+        blockDriverById_controller,
     
     } = userController(dependencies)
     router.post('/login' , login_controller)
@@ -19,6 +20,9 @@ export default (dependencies:any)=>{
     router.post('/send-sms' , sendSms_controller)
     router.post('/check-otp' , checkotp_controller)
     router.post('/get-driver-details' , getDriverDetails_controller)
+    router.post('/block-driver' , blockDriverById_controller)
+
     router.get('/get-all-drivers' , getAllDrivers_controller)
+
     return router
 }

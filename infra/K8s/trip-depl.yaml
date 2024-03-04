@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trip-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trip #Find the pods with the label app: trip 
+  template:
+    metadata:
+      labels:
+        app: trip
+    spec:
+      containers:
+        - name: trip
+          image: anasna/trip-service:latest
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: trip-service
+spec:
+  selector:
+    app: trip
+  type: ClusterIP
+  ports:
+    - name : trip
+      protocol: TCP
+      port: 8003
+      targetPort: 8003
+

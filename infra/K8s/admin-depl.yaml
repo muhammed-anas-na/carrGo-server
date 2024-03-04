@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin #Find the pods with the label app: admin 
+  template:
+    metadata:
+      labels:
+        app: admin
+    spec:
+      containers:
+        - name: admin
+          image: anasna/admin-service:latest
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: admin-service
+spec:
+  selector:
+    app: admin
+  type: ClusterIP
+  ports:
+    - name : admin
+      protocol: TCP
+      port: 8002
+      targetPort: 8002
+

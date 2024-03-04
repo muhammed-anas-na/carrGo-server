@@ -7,6 +7,6 @@ export const dbConenct = async()=>{
         await mongoose.connect(process.env.MONGO_URL!)
         console.log("Payment service connected to DB");
     }catch(err){
-        console.log("Error connection")
+        console.log("Error connection" , err)
     }
 }

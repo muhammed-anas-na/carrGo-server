@@ -6,6 +6,7 @@ import checkotp_controller from "./checkotp_controller";
 import sendSms_controller from "./sendSms_controller";
 import getDriverDetails_controller from "./getDriverDetails_controller";
 import getAllDrivers_controller from "./getAllDrivers_controller";
+import blockDriverById_controller from "./blockDriverById_controller";
 
 export default (dependencies:any)=>{
     return {
@@ -17,5 +18,7 @@ export default (dependencies:any)=>{
         sendSms_controller:sendSms_controller(dependencies),
         getDriverDetails_controller:getDriverDetails_controller(dependencies),
         getAllDrivers_controller:getAllDrivers_controller(dependencies),
+        blockDriverById_controller:blockDriverById_controller(dependencies),
     }
+
 } 

@@ -39,8 +39,8 @@ app.use(
     })
 )
 
-consumerConfig(dependencies)
-app.use('/' , routes(dependencies))  
+// consumerConfig(dependencies)
+app.use('/driver' , routes(dependencies))  
 app.use(errorMiddleware)
 
 export {app}

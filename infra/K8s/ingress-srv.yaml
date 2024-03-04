@@ -1,0 +1,55 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-srv
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: carrgo.com
+      http:
+        paths:
+          - path: /user/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: user-service
+                port:
+                  number: 8000
+          - path: /driver/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: driver-service
+                port:
+                  number: 8001
+          - path: /admin/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: admin-service
+                port:
+                  number: 8002
+          - path: /trip/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: trip-service
+                port:
+                  number: 8003
+          - path: /payment/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: payment-service
+                port:
+                  number: 8004
+          - path: /?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: client-service
+                port:
+                  number: 8080
+  ingressClassName: nginx

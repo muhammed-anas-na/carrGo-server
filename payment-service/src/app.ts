@@ -23,7 +23,7 @@ app.use(
 
 
 // consumerConfig(dependencies)
-app.use('/' , routes(dependencies))
+app.use('/payment' , routes(dependencies))
 app.use(errorMiddleware)
 
 export {app}

@@ -96,7 +96,16 @@ export default {
             status:data.status,
             pickup_time:data.pickup_time,
             dropoff_time:data.dropoff_time,
+            rating:data.rating,
         } )
+        return result;
+    },
+    completeCancelTrip:async(data:any)=>{
+        let result = await trip.findByIdAndUpdate(data.tripData._id , {
+            status:data.status,
+            cancelReason:data.cancelReason,
+            selectedOption:data.selectedOption,
+        },{new:true})
         return result;
     },
     GetAllTripsByUserId:(data: {Id: string})=>{
@@ -104,5 +113,21 @@ export default {
     },
     getOnlineDrivers:()=>{
         return driver.find({isLive:true});
+    },
+
+    getAllTrips:()=>{
+        return trip.find({});
+    },
+    getTripDetailsById:(data:{tripId:string})=>{
+        const tripId = data.tripId;
+        return trip.findById(tripId);
+    },
+    getTripDetailsByDriverId:(data:{driverId: string})=>{
+        const driverId = data.driverId;
+        return trip.find({driverId:driverId})
+    },
+    getTripDetailsByUserId:(data:{userId: string})=>{
+        const userId = data.userId;
+        return trip.find({customerId:userId});
     }
 }

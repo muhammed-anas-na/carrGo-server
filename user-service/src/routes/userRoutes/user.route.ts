@@ -1,7 +1,6 @@
 import express  from "express"
 import {userController} from '../../libs/controller'
 import authMiddlewawre from "../../libs/middleware/authMiddleware"
-import axios from 'axios';
 
 export default (dependencies:any)=>{
     const router = express.Router();
@@ -14,6 +13,8 @@ export default (dependencies:any)=>{
         sendSms_controller,
         getUserDetails_controller,
         getAllUsers_controller,
+        refreshToken_controller,
+        
     } = userController(dependencies)
 
     router.post('/login' ,login_controller)
@@ -21,10 +22,11 @@ export default (dependencies:any)=>{
     router.post('/signup' , signup_controller)
     router.post('/google/auth' , googleAuth_controller)
     router.post('/send-sms' , sendSms_controller)
-    router.post('/get-user-details', getUserDetails_controller)
+    router.post('/get-user-details',authMiddlewawre ,getUserDetails_controller)
+    router.post('/search-location' ,authMiddlewawre,  searchLocationController)
+    router.post('/refresh-token' , refreshToken_controller)
 
-    router.post('/search-location' , searchLocationController)
-    router.get('/get-all-users' , getAllUsers_controller)
-
-    return router
+    router.get('/get-all-users' ,getAllUsers_controller)    
+    router.get('/sample-route'  , (req,res)=>res.json({message:"Success"}))
+    return router;
 }

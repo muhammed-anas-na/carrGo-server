@@ -10,6 +10,11 @@ import finishTrip_controller from "./finishTrip_controller"
 import getAllTripsOfUser_controller from "./getAllTripsOfUser_controller"
 import getCurrentLocation_controller from "./getCurrentLocation_controller"
 import getOnlineDrivers_controller from './getOnlineDrivers_controller'
+import getAllTrips_controller from "./getAllTrips_controller"
+import getTripDetailsById_controller from './getTripDetailsById_controller'
+import getTripDetailsByDriverId_controller from "./getTripDetailsByDriverId_controller"
+import getTripDetailsByUserId_controller from "./getTripDetailsByUserId_controller"
+import completeCancelTrip_controller from "./completeCancelTrip_controller"
 
 export default (dependencies:any)=>{
     return {
@@ -25,5 +30,10 @@ export default (dependencies:any)=>{
         getAllTripsOfUser_controller:getAllTripsOfUser_controller(dependencies),
         getCurrentLocation_controller:getCurrentLocation_controller(dependencies),
         getOnlineDrivers_controller:getOnlineDrivers_controller(dependencies),
+        getAllTrips_controller:getAllTrips_controller(dependencies),
+        getTripDetailsById_controller:getTripDetailsById_controller(dependencies),
+        getTripDetailsByDriverId_controller:getTripDetailsByDriverId_controller(dependencies),
+        getTripDetailsByUserId_controller:getTripDetailsByUserId_controller(dependencies),
+        completeCancelTrip_controller:completeCancelTrip_controller(dependencies),
     }
 }

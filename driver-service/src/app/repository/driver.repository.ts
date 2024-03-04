@@ -102,5 +102,13 @@ export default{
         const driverId = data.driverId;
         console.log("DRIVER ID ==>" , driverId);
         return driver.findByIdAndUpdate(driverId , {isBlocked:false});
+      },
+      blockDriverById:(data:{driverId: string , isBlocked:boolean})=>{
+        const driverId = data.driverId;
+        if(data.isBlocked){
+          return driver.findByIdAndUpdate(driverId , {isBlocked:false} , {new:true});
+        }else{
+          return driver.findByIdAndUpdate(driverId , {isBlocked:true} , {new:true});
+        }
       }
 }

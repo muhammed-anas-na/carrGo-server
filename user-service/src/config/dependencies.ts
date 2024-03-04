@@ -7,6 +7,7 @@ import {
     sendSms_usecase,
     getUserDetails_usecase,
     getAllUser_usecase,
+    refreshToken_usecase,
 } from "../libs/useCases";
 import userRepository from "../app/repository/user.repository";
 
@@ -19,6 +20,7 @@ const useCases:any = {
     sendSms_usecase,
     getUserDetails_usecase,
     getAllUser_usecase,
+    refreshToken_usecase,
 }
 
 const repository:any = {

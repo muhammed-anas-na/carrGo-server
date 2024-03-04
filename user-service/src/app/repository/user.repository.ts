@@ -111,5 +111,5 @@ export default{
       },
       getAllUsers:()=>{
         return user.find();
-      }
+      },
 }
