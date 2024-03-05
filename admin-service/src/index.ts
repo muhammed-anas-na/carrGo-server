@@ -10,7 +10,7 @@ const start = async()=>{
 }
 
 app.listen(8002,()=>{
-    console.log("Starting...")
+    console.log("Startinggggggggg...")
     console.log("Admin service started at port 8002")
 })
 

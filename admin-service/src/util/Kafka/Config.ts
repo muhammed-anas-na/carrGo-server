@@ -8,7 +8,7 @@ class KafkaService {
     constructor() {
         this.kafka = new Kafka({
             clientId: 'nodejs-kafka',
-            brokers: ['localhost:9092'],
+            brokers: ['kafka-broker:9092'],
         });
 
         this.producer = this.kafka.producer();
