@@ -34,12 +34,12 @@ app.use(bodyParser.json())
 
 app.use(
     cors({
-      origin: 'http://localhost:8080',
+      origin:["https://muhammedanas.online" , "http://localhost:8080"],
       credentials: true,
     })
 )
 
-app.use('/user' , routes(dependencies))
+app.use('/api/user' , routes(dependencies))
 app.use(errorMiddleware)
 
 export {app}

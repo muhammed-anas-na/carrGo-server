@@ -17,16 +17,15 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(
     cors({
-      origin: 'http://localhost:8080',
+      origin:["https://muhammedanas.online" , "http://localhost:8080"],
       credentials: true,
-
     })
 )
 
 
 
 
-app.use('/trip' , routes(dependencies))
+app.use('/api/trip' , routes(dependencies))
 app.use(errorMiddleware)
 
 export {app}

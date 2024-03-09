@@ -17,6 +17,7 @@ import {
     getTripDetailsByDriverId_usecase,
     getTripDetailsByUserId_usecase,
     completeCancelTrip_usecase,
+    getDashboardData_usecase,
 } from "../libs/useCases";
 
 const useCases:any = {
@@ -36,6 +37,7 @@ const useCases:any = {
     getTripDetailsByDriverId_usecase,
     getTripDetailsByUserId_usecase,
     completeCancelTrip_usecase,
+    getDashboardData_usecase,
 }
 
 const repository:any = {

@@ -15,6 +15,7 @@ import getTripDetailsById_controller from './getTripDetailsById_controller'
 import getTripDetailsByDriverId_controller from "./getTripDetailsByDriverId_controller"
 import getTripDetailsByUserId_controller from "./getTripDetailsByUserId_controller"
 import completeCancelTrip_controller from "./completeCancelTrip_controller"
+import getDashboardData_controller from "./getDashboardData_controller"
 
 export default (dependencies:any)=>{
     return {
@@ -35,5 +36,6 @@ export default (dependencies:any)=>{
         getTripDetailsByDriverId_controller:getTripDetailsByDriverId_controller(dependencies),
         getTripDetailsByUserId_controller:getTripDetailsByUserId_controller(dependencies),
         completeCancelTrip_controller:completeCancelTrip_controller(dependencies),
+        getDashboardData_controller:getDashboardData_controller(dependencies),
     }
 }

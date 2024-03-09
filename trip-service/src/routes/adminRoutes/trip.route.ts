@@ -17,6 +17,7 @@ export default (dependencies:any)=>{
         getTripDetailsByDriverId_controller,
         getTripDetailsByUserId_controller,
         completeCancelTrip_controller,
+        getDashboardData_controller,
     } = adminController(dependencies)
     
     router.post('/find-cab' , findcab_controller)
@@ -31,6 +32,7 @@ export default (dependencies:any)=>{
     router.post('/get-trip-details-by-user-id' , getTripDetailsByUserId_controller)
     router.post('/complete-cancel-trip' , completeCancelTrip_controller)
 
+    router.get('/load-dashboard' , getDashboardData_controller)
     router.get('/get-online-drivers' , getOnlineDrivers_controller)
     router.get('/get-all-trips' , getAllTrips_controller)
     return router

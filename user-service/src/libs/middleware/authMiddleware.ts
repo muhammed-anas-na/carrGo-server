@@ -2,7 +2,6 @@ import {Request,Response,NextFunction} from 'express'
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 dotenv.config()
-
     const authMiddlewawre=(req: Request,res: Response,next: NextFunction)=>{
         console.log("AUTH MIDDLEWARE")
         if(!req.headers.authorization){

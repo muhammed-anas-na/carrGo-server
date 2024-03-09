@@ -16,14 +16,14 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(
     cors({
-      origin: 'http://localhost:5173',
+      origin:["https://muhammedanas.online" , "http://localhost:8080"],
       credentials: true,
     })
 )
 
 
 // consumerConfig(dependencies)
-app.use('/payment' , routes(dependencies))
+app.use('/api/payment' , routes(dependencies))
 app.use(errorMiddleware)
 
 export {app}

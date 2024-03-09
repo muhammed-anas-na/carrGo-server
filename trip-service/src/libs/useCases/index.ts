@@ -14,6 +14,7 @@ import { getTripDetailsById_usecase } from './trip/getTripDetailsById_usecase';
 import { getTripDetailsByDriverId_usecase } from './trip/getTripDetailsByDriverId_usecase';
 import { getTripDetailsByUserId_usecase } from './trip/getTripDetailsByUserId_usecase';
 import { completeCancelTrip_usecase } from './trip/completeCancelTrip_usecase';
+import { getDashboardData_usecase } from './trip/getDashboardData_usecase';
 
 export {
     findcab_usecase,
@@ -32,4 +33,5 @@ export {
     getTripDetailsByDriverId_usecase,
     getTripDetailsByUserId_usecase,
     completeCancelTrip_usecase,
+    getDashboardData_usecase,
 }

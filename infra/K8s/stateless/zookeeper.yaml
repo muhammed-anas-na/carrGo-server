@@ -1,25 +1,8 @@
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: zookeeper-service
-  name: zookeeper-service
-spec:
-  type: NodePort
-  ports:
-    - name: zookeeper-port
-      port: 2181
-      nodePort: 30181
-      targetPort: 2181
-  selector:
-    app: zookeeper
----
+# zookeeper-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: zookeeper
-  name: zookeeper 
+  name: zookeeper-deployment
 spec:
   replicas: 1
   selector:
@@ -31,8 +14,21 @@ spec:
         app: zookeeper
     spec:
       containers:
-        - image: wurstmeister/zookeeper
-          imagePullPolicy: IfNotPresent
-          name: zookeeper
+        - name: zookeeper
+          image: wurstmeister/zookeeper
           ports:
             - containerPort: 2181
+
+---
+# zookeeper-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: zookeeper-service
+spec:
+  selector:
+    app: zookeeper
+  ports:
+    - protocol: TCP
+      port: 2181
+      targetPort: 2181

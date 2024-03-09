@@ -5,6 +5,7 @@ export default (dependencies:any)=>{
         try{
             const {useCases:{loginDriver_usecase}} = dependencies
             const {number,password} = req.body;
+            console.log("In login controller")
             const response = await loginDriver_usecase(dependencies).execute(number,password);
             if(response.message){
                 res.json(response)

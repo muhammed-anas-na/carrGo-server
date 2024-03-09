@@ -129,5 +129,8 @@ export default {
     getTripDetailsByUserId:(data:{userId: string})=>{
         const userId = data.userId;
         return trip.find({customerId:userId});
+    },
+    getDashboardData:()=>{
+        
     }
 }

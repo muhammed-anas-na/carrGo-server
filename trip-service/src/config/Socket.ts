@@ -10,8 +10,9 @@ export default function SocketIo(server: any , dependencies: any){
 
   } = adminController(dependencies)
     const io = new Server(server, {
-        cors: {origin:"http://localhost:5173", methods: ["GET", "POST"]},
-    });
+        cors: {origin:"https://muhammedanas.online", methods: ["GET", "POST"]},
+    }); 
+    console.log("Socket page")
     
     io.on("connection", (socket) => {
         console.log(`A user connected ${socket.id}`); 
