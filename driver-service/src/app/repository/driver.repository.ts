@@ -110,5 +110,12 @@ export default{
         }else{
           return driver.findByIdAndUpdate(driverId , {isBlocked:true} , {new:true});
         }
+      },
+
+      updateWalletByDriverId:(data:{driverId: string , fare:string})=>{
+        const fareAmount  = parseInt(data.fare)
+        return driver.findByIdAndUpdate(data.driverId , {
+          $inc:{wallet:fareAmount }
+        } , {new:true})
       }
-}
+} 

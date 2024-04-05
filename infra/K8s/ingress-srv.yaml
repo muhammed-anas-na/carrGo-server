@@ -5,6 +5,10 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
     kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/websocket-services: "trip-service"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.org/websocket-services: trip-service
+    nginx.ingress.kubernetes.io/secure-backends: "true"
 spec:
   rules:
     - host: muhammedanas.online
@@ -32,6 +36,13 @@ spec:
                 port:
                   number: 8002
           - path: /api/trip/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: trip-service
+                port:
+                  number: 8003
+          - path: /socket.io/
             pathType: Prefix
             backend:
               service:

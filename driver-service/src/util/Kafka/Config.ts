@@ -8,7 +8,7 @@ class KafkaService {
     constructor() {
         this.kafka = new Kafka({
             clientId: 'nodejs-kafka',
-            brokers: ['kafka-service:9092'],
+            brokers: ['demo-kafka:9092'],
         });
 
         this.producer = this.kafka.producer();
@@ -47,5 +47,4 @@ class KafkaService {
         }
     }
 }
-
 export default KafkaService;

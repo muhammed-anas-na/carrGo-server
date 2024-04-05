@@ -11,7 +11,6 @@ const app = express()
 const router = express.Router();
 app.use(express.json({limit:"1000mb"}));
 app.use(express.urlencoded());
-
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(
@@ -20,8 +19,6 @@ app.use(
       credentials: true,
     })
 )
-
-
 // consumerConfig(dependencies)
 app.use('/api/payment' , routes(dependencies))
 app.use(errorMiddleware)

@@ -39,7 +39,7 @@ app.use(
     })
 )
 
-// consumerConfig(dependencies)
+consumerConfig(dependencies)
 app.use('/api/driver' , routes(dependencies))  
 app.use(errorMiddleware)
 

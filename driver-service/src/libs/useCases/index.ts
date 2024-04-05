@@ -7,6 +7,7 @@ import { getDriverDetails_usecase } from "./user/getDriverDetails_usecase";
 import { getAllDrivers_usecase } from "./user/getAllDrivers_usecase";
 import { adminAcceptedDriverRequest_usecase } from "./user/adminAcceptedDriverRequest_usecase";
 import { blockDriverById_usecase } from "./user/blockDriverById_usecase";
+import { updateWallet_usecase } from "./user/updateWallet_usecase"; 
 
 export {
     loginDriver_usecase,
@@ -18,4 +19,5 @@ export {
     getAllDrivers_usecase,
     adminAcceptedDriverRequest_usecase,
     blockDriverById_usecase,
+    updateWallet_usecase,
 }

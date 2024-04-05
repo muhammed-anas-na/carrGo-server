@@ -10,12 +10,10 @@ export default function SocketIo(server: any , dependencies: any){
 
   } = adminController(dependencies)
     const io = new Server(server, {
-        cors: {origin:"https://muhammedanas.online", methods: ["GET", "POST"]},
-    }); 
-    console.log("Socket page")
-    
+        cors: {origin:"*"},
+    });
     io.on("connection", (socket) => {
-        console.log(`A user connected ${socket.id}`); 
+        console.log(`A user connected ${socket.id}`);
         const Id = socket.id
 
         //From driver client

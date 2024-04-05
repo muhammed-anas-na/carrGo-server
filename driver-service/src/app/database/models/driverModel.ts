@@ -17,6 +17,10 @@ const driverModel = new mongoose.Schema({
     },
     isPremium: Boolean,
     current_location: String,
+    wallet:{
+      type:Number,
+      default:0
+    }
 })
 
 driverModel.pre("save", async function (next) {

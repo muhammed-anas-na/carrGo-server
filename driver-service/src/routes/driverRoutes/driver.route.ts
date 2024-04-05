@@ -12,6 +12,7 @@ export default (dependencies:any)=>{
         getDriverDetails_controller,
         getAllDrivers_controller,
         blockDriverById_controller,
+        updateWallet_controller,
     
     } = userController(dependencies)
     router.post('/login' , login_controller)
@@ -23,6 +24,8 @@ export default (dependencies:any)=>{
     router.post('/block-driver' , blockDriverById_controller)
 
     router.get('/get-all-drivers' , getAllDrivers_controller)
+
+    router.put('/update-wallet' , updateWallet_controller)
 
     return router
 }

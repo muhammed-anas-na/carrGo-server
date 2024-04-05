@@ -8,6 +8,7 @@ import {
     getAllDrivers_usecase,
     adminAcceptedDriverRequest_usecase,
     blockDriverById_usecase,
+    updateWallet_usecase
 } from "../libs/useCases";
 import driverRepository from "../app/repository/driver.repository";
 
@@ -21,6 +22,7 @@ const useCases:any = {
     getAllDrivers_usecase,
     adminAcceptedDriverRequest_usecase,
     blockDriverById_usecase,
+    updateWallet_usecase,
 }
 
 const repository:any = {

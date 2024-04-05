@@ -25,8 +25,8 @@ export default (dependencies: any) => {
                     }
                 ],
                 mode: "payment",
-                success_url: `http://localhost:5173/review/${tripData._id}`,
-                cancel_url: "http://localhost:5173/cancel",
+                success_url: `https://muhammedanas.online/carrgo/review/${tripData._id}`,
+                cancel_url: "https://muhammedanas.online/carrgo/cancel",
                 billing_address_collection: 'required',
                 customer_email: 'customer@example.com',
             });
